@@ -1,3 +1,4 @@
+import 'bulma/css/bulma.css'
 
 // Import React and Component
     import React, { Component } from 'react';

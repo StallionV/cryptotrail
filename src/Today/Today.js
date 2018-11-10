@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Today.css' 
 import axios from 'axios'
 
-
 class Today extends Component {
         // Adds a class constructor that assigns the initial state values:
         constructor () {
