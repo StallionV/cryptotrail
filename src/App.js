@@ -10,6 +10,14 @@ import 'bulma/css/bulma.css'
     import History from './History/History'
 
     class App extends Component {
+      // Adds a class constructor that assigns the initial state values:
+      constructor () {
+          super();
+          this.state = {
+            coins: ["BTC","ETH","LTC"]
+          };
+      }
+      
       render() {
         return (
           <div className="">
@@ -27,11 +35,11 @@ import 'bulma/css/bulma.css'
               </div>
               <section className="results--section">
                   <div className="container">
-                      <h1>Crypto Trail is a realtime price information about<br></br> BTC, ETH and LTC.</h1>
+                      <h1>Crypto Trail is a realtime price information about<br></br> {this.state.coins.join(", ")}.</h1>
                   </div>
                   <div className="results--section__inner">
-                      <Today />
-                      <History />
+                      <Today coins={this.state.coins}/>
+                      <History coins={this.state.coins}/>
                   </div>
               </section>
           </div>

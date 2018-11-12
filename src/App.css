@@ -1,8 +1,11 @@
+#root {
+ background-color: #f7f7f7;
+}
 .topheader {
-  background-color: #174c80;
+  background-color: #333333;
 }
 .navbar {
-  background-color: #174c80;
+  background-color: #333333;
 }
 .navbar-item {
   color: #fff;
