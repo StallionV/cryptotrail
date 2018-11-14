@@ -1,13 +1,14 @@
-import 'bulma/css/bulma.css'
-
-// Import React and Component
+    // Import React and Component
     import React, { Component } from 'react';
+    // Import Bulma css
+    import 'bulma/css/bulma.css'
     // Import CSS from App.css
     import './App.css';
     // Import the Today component to be used below
     import Today from './Today/Today'
     // Import the History component to be used below
     import History from './History/History'
+    
 
     class App extends Component {
       // Adds a class constructor that assigns the initial state values:

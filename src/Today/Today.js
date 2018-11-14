@@ -11,6 +11,12 @@ class Today extends Component {
         // This is called when an instance of a component is being created and inserted into the DOM.
         componentWillMount () {
             let coins = this.props.coins;
+            if (!navigator.onLine) {
+                coins.forEach(c => {
+                    this.setState({ [c]: localStorage.getItem(c) });
+                });
+            }
+            setInterval(() => {
             axios.get(`https://min-api.cryptocompare.com/data/pricemulti?fsyms=${coins.join(",")}&tsyms=USD`)
                 .then(response => {
                     // We set the latest prices in the state to the prices gotten from Cryptocurrency.
@@ -25,6 +31,7 @@ class Today extends Component {
                 .catch(error => {
                     console.log(error)
                 });
+            }, 10000);    
         }
         currentPrice() {
             return ( Object.keys(this.state).map( s => {
